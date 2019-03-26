@@ -5,12 +5,12 @@ function make_move() {
    var board = get_board();
 
    // we found an item! take it!
-   let my_x = get_my_x();
-   let my_y = get_my_y();
+   var my_x = get_my_x();
+   var my_y = get_my_y();
 
    var best_x = -1;
    var best_y = -1;
-   var best_dist  = Number.MAX_SAFE_INTEGER;
+   var best_dist  = 1024;
 
    if (board[get_my_x()][get_my_y()] > 0) {
        return TAKE;
@@ -18,7 +18,7 @@ function make_move() {
 
    for (var i=0; i<WIDTH; i++) {
       for (var j=0; j<HEIGHT; j++) {
-         let new_dist = (Math.abs(i-my_x)+Math.abs(j-my_y))
+         var new_dist = (Math.abs(i-my_x)+Math.abs(j-my_y))
          if ((board[i][j]>0) & (new_dist < best_dist)){
             best_x = i;
             best_y = j;
@@ -27,25 +27,20 @@ function make_move() {
       }
    }
 
-   if ((my_x-best_x)>0) {
+   var x_diff = my_x - best_x;
+   var y_diff = my_y - best_y;
+
+   if (x_diff>0) {
       return WEST;
-   } else if ((my_x-best_x) < 0) {
+   } else if (x_diff < 0) {
       return EAST;
    } else {
-     if ((my_y-best_y)>0) {
+     if (y_diff>0) {
         return NORTH;
-     } else if ((my_y-best_y)<0) {
+     } else if (y_diff<0) {
         return SOUTH;
      } else {
         return TAKE;
      }
    }
 }
-
-// Optionally include this function if you'd like to always reset to a 
-// certain board number/layout. This is useful for repeatedly testing your
-// bot(s) against known positions.
-//
-//function default_board_number() {
-//    return 123;
-//}
