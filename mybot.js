@@ -34,7 +34,7 @@ function make_move() {
    } else {
      if ((my_y-best_y)>0) {
         return NORTH;
-     } else if ((my_x-best_x)<0) {
+     } else if ((my_y-best_y)<0) {
         return SOUTH;
      } else {
         return TAKE;
