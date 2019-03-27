@@ -11,15 +11,14 @@ This is an attempt at solving an interesting 2 player AI problem of perfect info
 2. Movement to Nearest
   1. ``Any reward category``
   2. Ignore irrelevant/won categories
-3. Agents and Game Simulation
-  1. Custom Game Representation
-    * Describe game state using type and coordinates of rewards, and coordinates of AI agents
-  2. Agents with Goals
-    * Create a callable agent that takes a goal coordinate and returns a direction towards that goal, or take if it's at the goal
-  3. Game Simulation
-    * Update the custom game representation 'warp' that jumps ahead to the next turn when an agent achieves their goal
-    * Use some logic to check if the game has terminated with a winner
-  4. Move Evaluation
-    * Simulate a game for each remaining reward where this agent takes that reward as a target, the opponent uses a deterministic policy, and a random winning target is chosen. 
-  5. 1-Player Search
+2. Custom Game Representation
+  * Describe game state using type and coordinates of rewards, and coordinates of AI agents
+3. Agents with Goals
+  * Create a callable agent that takes a goal coordinate and returns a direction towards that goal, or take if it's at the goal
+4. Game Simulation
+  * Update the custom game representation 'warp' that jumps ahead to the next turn when an agent achieves their goal
+  * Use some logic to check if the game has terminated with a winner
+5. Move Evaluation
+  * Simulate a game for each remaining reward where this agent takes that reward as a target, the opponent uses a deterministic policy, and a random winning target is chosen. 
+6. 1-Player Search
     * Implement a game tree maximization algorithm where the opponent uses a deterministic policy, and player searches over an action space where it chooses available rewards as a target
