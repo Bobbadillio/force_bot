@@ -7,9 +7,9 @@ This is an attempt at solving an interesting 2 player AI problem of perfect info
     I'm going to use 'deterministic policy' to mean a strategy like 'move to nearest reward' where the AI never really has any options. In fact, I will probably always use deterministic policy to mean 'move to nearest (relevant) reward'
 
 ### TODO: Items to implement
-1. ``Random Movement``
+1. Random Movement - DONE
 2. Movement to Nearest
-  1. ``Any reward category``
+  1. Any reward category - DONE
   2. Ignore irrelevant/won categories
 2. Custom Game Representation
   * Describe game state using type and coordinates of rewards, and coordinates of AI agents
